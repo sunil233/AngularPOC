@@ -14,11 +14,11 @@ Sample POC Application to submit timesheet with all the features in Angular
 3) Publish the SSDT Project(POC.Database) for Database setup
 
 # Angular Features
-1)   Multilayout and Multi-level Horizontal menu
+1)   Multi-layout and Multi-level Horizontal menu
 2)   Bootstrap scss
 3)   Routing and Route Guards
 4)   Lazyloading modules
-5)   Realtime Web Api integration with Http calls
+5)   Realtime Web Api integration with Http service calls
 6)   Cross cutting concerns(Logging and exception Handling)
 7)   Model driven Validations
 8)   Custom controls and Shared components
