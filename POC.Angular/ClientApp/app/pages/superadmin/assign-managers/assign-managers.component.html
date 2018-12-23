@@ -1,0 +1,67 @@
+<form [formGroup]="AssignForm" class="form-validate form-horizontal" (submit)="submitForm($event, AssignForm.value)" novalidate="">
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+            <div class="panel panel-info">
+                <div class="panel-heading">Assign Managers</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-1">&nbsp;</div>
+                        <div class="col-md-4">
+                            <label class="control-label">Admins List</label>
+                            <select class="form-control" [(ngModel)]="userdetails.RegistrationID" formControlName="ddlAdmin" [formControl]="AssignForm.controls['ddlAdmin']">
+                                <option value="">--Select--</option>
+                                <option *ngFor="let admin of adminlist" value={{admin.RegistrationID}}>
+                                    {{admin.FullName}}
+                                </option>
+                            </select>
+                            <span class="text-danger" *ngIf="AssignForm.controls['ddlAdmin'].hasError('required') && (AssignForm.controls['ddlAdmin'].dirty || AssignForm.controls['ddlAdmin'].touched)">Admin is required</span>
+                        </div>
+                        <div class="col-md-7">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">&nbsp;</div>
+                    </div>
+                    <div class="row" formArrayName="chkUsers">
+                        <div class="col-md-1">&nbsp;</div>
+                        <div class="col-md-10">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Choose Employee To Assign to Admin</div>
+                                <div class="panel-body">
+                                    <div *ngFor="let step of userslist; let i = index" class="col-xs-4">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" [formControlName]="i" [(ngModel)]="userslist[i].selectedUsers" [value]="userslist[i].RegistrationID">
+                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span> {{userslist[i].FullName}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1">&nbsp;</div>
+                        <div class="col-md-10">
+                            <span class="text-danger" *ngIf="AssignForm.controls['chkUsers'].status=='INVALID' && (AssignForm.controls['chkUsers'].dirty || AssignForm.controls['chkUsers'].touched)">Please Select at least one Employee.</span>
+                        </div>
+                        <div class="col-md-1">&nbsp;</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+            <button type="submit" class="btn btn-oval btn-danger">Assign Manager</button>
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">&nbsp;</div>
+    </div>
+</form>

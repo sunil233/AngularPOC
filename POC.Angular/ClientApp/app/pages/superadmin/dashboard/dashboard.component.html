@@ -1,0 +1,52 @@
+<div class="row" [ngBusy]="[dashboardbusy]">
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-3">
+        <div id="divUser">
+            <a href="#" (click)="onCardClick('users')" class="card-link">
+                <div class="card-counter info">
+                    <i class="fa fa-user"></i>
+                    <span class="count-numbers">{{UsersCount}}</span>
+                    <span class="count-name">Users </span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div id="divAdmins">
+            <a href="#" (click)="onCardClick('admin')" class="card-link">
+                <div class="card-counter primary">
+                    <i class="fa fa-ticket"></i>
+                    <span class="count-numbers">{{AdminsCount}}</span>
+                    <span class="count-name">Admins</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div id="divProjects">
+            <a href="#" (click)="onCardClick('projects')" class="card-link">
+                <div class="card-counter danger">
+                    <i class="fa fa-database"></i>
+                    <span class="count-numbers">{{ProjectsCount}}</span>
+                    <span class="count-name">Projects</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-1">&nbsp;</div>
+</div>
+<div  class="row"><div  class="col-md-12">&nbsp;</div></div>
+<div class="row">
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-10">
+        <poc-grid [columns]="columns"
+                  [data]="adminuserdetails"
+                  [sort]="sorting"
+                   [isEdit]="true"
+                  [showPaging]="true"
+                  [showSearch]="true"
+                  (btnclick)="gridaction($event)">
+        </poc-grid>
+    </div>
+    <div class="col-md-1">&nbsp;</div>
+</div>

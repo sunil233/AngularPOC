@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-10">&nbsp;<b>List of Roles</b></div>
+    <div class="col-md-1">&nbsp;</div>
+</div>
+<div class="row" [ngBusy]="[projectsbusy]">
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-10">
+        <poc-grid [columns]="columns"
+                  [data]="rolesdetails"
+                  [sort]="sorting"
+                  [isEdit]="true"
+                  [isDelete]="true"
+                  [showPaging]="true"
+                  [showSearch]="true"
+                  (btnclick)="gridaction($event)" [ngBusy]="rolesbusy">
+        </poc-grid>
+    </div>
+    <div class="col-md-1">&nbsp;</div>
+</div>
+<div class="row">
+    <div class="col-md-12">&nbsp;</div>
+</div>

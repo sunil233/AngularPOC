@@ -1,0 +1,54 @@
+<form [formGroup]="roleForm" class="form-validate form-horizontal" (submit)="submitForm($event, roleForm.value)" novalidate="">
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+            <div class="panel panel-info">
+                <div class="panel-heading">Roles Information</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label class="control-label">Role Name</label>
+                            <input [(ngModel)]="roledetails.Rolename" class="form-control" type="text" [attr.disabled]="isDisable ? '' : null" formControlName="RoleName" [formControl]="roleForm.controls['RoleName']" (blur)="onRoleNameChange()" />
+                            <span class="text-danger" *ngIf="roleForm.controls['RoleName'].hasError('required') && (roleForm.controls['RoleName'].dirty || roleForm.controls['RoleName'].touched)">Role Name is required</span>
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="control-label" >Role Code</label>
+                            <input [(ngModel)]="roledetails.RoleCode"  class="form-control" type="text" [attr.disabled]="isDisable ? '' : null" formControlName="RoleCode" [formControl]="roleForm.controls['RoleCode']" (blur)="onRoleCodeChange()" />
+                            <span class="text-danger" *ngIf="roleForm.controls['RoleCode'].hasError('required') && (roleForm.controls['RoleCode'].dirty || roleForm.controls['RoleCode'].touched)">Role Code is required</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label class="control-label"> Active/InActive</label><br />
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" checked [(ngModel)]="roledetails.IsActive" formControlName="IsActive" [formControl]="roleForm.controls['IsActive']">
+                                    <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                                </label>
+                            </div>
+                            <span class="text-danger" *ngIf="roleForm.controls['IsActive'].hasError('required') && (roleForm.controls['IsActive'].dirty || roleForm.controls['IsActive'].touched)">Status is required</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+            <button type="submit" class="btn btn-oval btn-success mr-0">Save</button>&nbsp;
+            <button type="button" class="btn btn-oval btn-danger" (click)="onCancel()">Cancel</button>
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">&nbsp;</div>
+    </div>
+</form>

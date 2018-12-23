@@ -1,0 +1,83 @@
+<div id="navbar">
+    <nav class="navbar navbar-default poc-menu" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"  (click)="navCollapsed = !navCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand poc-menuitem" href="#">Time Sheeet</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-1" [collapse]="navCollapsed">
+            <ul class="nav navbar-nav">
+                <li class="poc-menuitem"><a href="#"   (click)="onMenuClick('dashboard')" >Dashboard</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Add <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown dropdown-submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Employees</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" (click)="onMenuClick('Addusers')"><i class="fa fa-user fa-fw"></i>Add Employee</a></li>
+                                <li class="custom-divider"></li>
+                                <li><a href="#" (click)="onMenuClick('users')">All Employees</a></li>
+                                <li class="custom-divider"></li>
+                                <li><a href="#" (click)="onMenuClick('adminusers')">All Managers</a></li>
+                                <li class="custom-divider"></li>
+                                <li><a href="#" (click)="onMenuClick('removemanager')">Remove Manager</a></li>
+                                <li class="custom-divider"></li>
+                                <li><a href="#" (click)="onMenuClick('assignmanager')">Assign Manager</a></li>
+                            </ul>
+                        </li>
+                        <li class="custom-divider"></li>
+                        <li class="dropdown dropdown-submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Roles</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" (click)="onMenuClick('addrole')">Add Role</a></li>
+                                <li class="custom-divider"></li>
+                                <li><a href="#" (click)="onMenuClick('roles')">All Roles</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="custom-divider"></li>
+                        <li class="dropdown dropdown-submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" (click)="onMenuClick('project')">Add Project</a></li>
+                                <li class="custom-divider"></li>
+                                <li><a href="#" (click)="onMenuClick('projects')">All Projects</a></li>
+                                <li class="custom-divider"></li>
+                                <li><a href="#" (click)="onMenuClick('assignprojects')">Assign Project</a></li>
+                                <li class="custom-divider"></li>
+                                <li><a href="#" (click)="onMenuClick('removeprojects')">Remove Project</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Export <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"  (click)="onMenuClick('users')">Export All TimeSheets</a></li>
+                        <li class="custom-divider"></li>
+                        <li><a href="#"  (click)="onMenuClick('users')">Export All Expense</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="fa fa-bell fa-fw"></i>Push Notification</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!-- START Alert menu-->
+                <li class="dropdown dropdown-list">
+                    <a href="#" data-toggle="dropdown">
+                        <em class="icon-user"></em>&nbsp; Welcome {{userName}}
+                    </a>
+                    <!-- START Dropdown menu-->
+                    <ul class="dropdown-menu animated flipInX">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i>Change Password</a></li>
+                        <li class="custom-divider"></li>
+                        <li><a href="#" (click)="onMenuClick('logout')">  <em class="fa fa-sign-out fa-1x text-success"></em>Logout</a></li>                        
+                    </ul>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+</div>

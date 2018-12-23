@@ -1,0 +1,67 @@
+<form [formGroup]="AssignForm" class="form-validate form-horizontal" (submit)="submitForm($event)" novalidate="">
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+            <div class="panel panel-info">
+                <div class="panel-heading">Assign Projects</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-1">&nbsp;</div>
+                        <div class="col-md-4">
+                            <label class="control-label">Manager List</label>
+                            <select class="form-control" [(ngModel)]="ManagerId" formControlName="ddlManager" [formControl]="AssignForm.controls['ddlManager']">
+                                <option value="-1">--Select--</option>
+                                <option *ngFor="let admin of managerlist" value={{admin.RegistrationID}}>
+                                    {{admin.FullName}}
+                                </option>
+                            </select>
+                            <span class="text-danger" *ngIf="AssignForm.controls['ddlManager'].hasError('required') && (AssignForm.controls['ddlManager'].dirty || AssignForm.controls['ddlManager'].touched)">Manager is required</span>
+                        </div>
+                        <div class="col-md-7">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">&nbsp;</div>
+                    </div>
+                    <div class="row" formArrayName="chkProjects">
+                        <div class="col-md-1">&nbsp;</div>
+                        <div class="col-md-10">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Projects</div>
+                                <div class="panel-body">
+                                    <div *ngFor="let step of projectlist; let i = index" class="col-xs-4">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" [formControlName]="i" [(ngModel)]="projectlist[i].selectedProject" [value]="projectlist[i].ProjectID">
+                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span> {{projectlist[i].ProjectName}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1">&nbsp;</div>
+                        <div class="col-md-10">
+                            <span class="text-danger" *ngIf="AssignForm.controls['chkProjects'].status=='INVALID' && (AssignForm.controls['chkProjects'].dirty || AssignForm.controls['chkProjects'].touched)">Please Select at least one Project.</span>
+                        </div>
+                        <div class="col-md-1">&nbsp;</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+            <button type="submit" class="btn btn-oval btn-success">Assign Project</button>
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">&nbsp;</div>
+    </div>
+</form>

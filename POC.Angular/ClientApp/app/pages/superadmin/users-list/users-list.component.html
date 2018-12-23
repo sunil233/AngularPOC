@@ -1,0 +1,28 @@
+<ul class="breadcrumb">
+    <li><a href="#">Add</a> <span class="divider"></span></li>
+    <li><a href="#">Employees</a> <span class="divider"></span></li>
+    <li class="active">All Employees</li>
+</ul>
+<div class="row">
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-10">&nbsp;<b>List of Employees</b></div>
+    <div class="col-md-1">&nbsp;</div>
+</div>
+<div class="row">
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-10">
+        <poc-grid [columns]="columns"
+                  [data]="userdetails"
+                  [sort]="sorting"
+                  [isEdit]="true"
+                  [isDelete]="true"
+                  [showPaging]="true"
+                  [showSearch]="true"
+                  (btnclick)="gridaction($event)" [ngBusy]="usersbusy">
+        </poc-grid>
+    </div>
+    <div class="col-md-1">&nbsp;</div>
+</div>
+<div class="row">
+    <div class="col-md-12">&nbsp;</div>
+</div>

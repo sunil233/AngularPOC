@@ -1,0 +1,175 @@
+<ul class="breadcrumb">
+    <li><a href="#">Add</a> <span class="divider"></span></li>
+    <li><a href="#">Employees</a> <span class="divider"></span></li>
+    <li class="active">Add Employee</li>
+</ul>
+<form [formGroup]="userForm" class="form-validate form-horizontal" (submit)="submitForm($event, userForm.value)" novalidate="">
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+            <div class="panel panel-info">
+                <div class="panel-heading">Personal Information</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label class="control-label">First Name</label>
+                            <input [(ngModel)]="userdetails.FirstName" class="form-control" type="text" formControlName="FirstName" [formControl]="userForm.controls['FirstName']" />
+                            <span class="text-danger" *ngIf="userForm.controls['FirstName'].hasError('required') && (userForm.controls['FirstName'].dirty || userForm.controls['FirstName'].touched)">First Name is required</span>
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="control-label">Middle Name</label>
+                            <input [(ngModel)]="userdetails.MiddleName" class="form-control" type="text" formControlName="MiddleName" [formControl]="userForm.controls['MiddleName']" />
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="control-label">Last Name</label>
+                            <input [(ngModel)]="userdetails.LastName" class="form-control" type="text" formControlName="LastName" [formControl]="userForm.controls['LastName']" />
+                            <span class="text-danger" *ngIf="userForm.controls['LastName'].hasError('required') && (userForm.controls['LastName'].dirty || userForm.controls['LastName'].touched)">Last Name is required</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="clearfix"></div>
+                        <div class="col-lg-4">
+                            <label class="control-label">Gender</label> <br />
+                            <select class="form-control" appSelectValidator [(ngModel)]="userdetails.Gender" formControlName="Gender" [formControl]="userForm.controls['Gender']">
+                                <option value="-1">--Select--</option>
+                                <option value="Male">Male</option>
+                                <option value="FeMale">FeMale</option>
+                            </select>
+                            <span class="text-danger" *ngIf="userForm.controls['Gender'].hasError('defaultselected') && (userForm.controls['Gender'].dirty || userForm.controls['Gender'].touched)">Gender is required</span>
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="control-label">Birth date</label>
+                            <input [(ngModel)]="userdetails.Birthdate" class="form-control" type="text" formControlName="Birthdate" [formControl]="userForm.controls['Birthdate']" bsDatepicker [bsConfig]="bsConfig" />
+                            <span class="text-danger" *ngIf="userForm.controls['Birthdate'].hasError('required') && (userForm.controls['Birthdate'].dirty || userForm.controls['Birthdate'].touched)">Birth date is required</span>
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="control-label">Mobile No</label>
+                            <input [(ngModel)]="userdetails.Mobileno" class="form-control" type="text" formControlName="Mobileno" [formControl]="userForm.controls['Mobileno']" />
+                            <span class="text-danger" *ngIf="userForm.controls['Mobileno'].hasError('required') && (userForm.controls['Mobileno'].dirty || userForm.controls['Mobileno'].touched)">Mobile no is required</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="clearfix"></div>
+                        <div class="col-lg-4">
+                            <label class="control-label">Personal Email</label>
+                            <input [(ngModel)]="userdetails.EmailID" class="form-control" type="text" formControlName="EmailID" [formControl]="userForm.controls['EmailID']" />
+                            <span class="text-danger" *ngIf="userForm.controls['EmailID'].hasError('required') && (userForm.controls['EmailID'].dirty || userForm.controls['EmailID'].touched)">Email ID is required</span>
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="control-label">Emergency Contact Name</label>
+                            <input [(ngModel)]="userdetails.EmergencyContact" class="form-control" type="text" formControlName="EmergencyContact" [formControl]="userForm.controls['EmergencyContact']" />
+                            <span class="text-danger" *ngIf="userForm.controls['EmergencyContact'].hasError('required') && (userForm.controls['EmergencyContact'].dirty || userForm.controls['EmergencyContact'].touched)">Emergency Contact is required</span>
+
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="control-label">Emergency Contact Number</label>
+                            <input [(ngModel)]="userdetails.EmergencyContactNumber" class="form-control" type="text" formControlName="EmergencyContactNumber" [formControl]="userForm.controls['EmergencyContactNumber']" />
+                            <span class="text-danger" *ngIf="userForm.controls['EmergencyContactNumber'].hasError('required') && (userForm.controls['EmergencyContactNumber'].dirty || userForm.controls['EmergencyContactNumber'].touched)">Emergency Contact Number is required</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">Work Information</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="clearfix">
+                            <span class="text-danger" *ngIf="userForm.get('passwordGroup.password').hasError('required') && (userForm.get('passwordGroup.password').dirty || userForm.get('passwordGroup.password').touched)">Password is required</span>
+                            <span class="text-danger" *ngIf="userForm.get('passwordGroup.confirmPassword').hasError('equalTo')">Password does Not match</span>
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="control-label">Username</label>
+                            <input [(ngModel)]="userdetails.Username" class="form-control" type="text" formControlName="Username" [formControl]="userForm.controls['Username']" />
+                            <span class="text-danger" *ngIf="userForm.controls['Username'].hasError('required') && (userForm.controls['Username'].dirty || userForm.controls['Username'].touched)">Username is required</span>
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="control-label"> Password</label>
+                            <input [(ngModel)]="userdetails.Password" class="form-control" type="text" formControlName="Password" [formControl]="userForm.controls['Password']" />
+                            <span class="text-danger" *ngIf="userForm.controls['Password'].hasError('required') && (userForm.controls['Password'].dirty || userForm.controls['Password'].touched)">Password is required</span>
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="control-label">Confirm Password</label>
+                            <input [(ngModel)]="userdetails.ConfirmPassword" class="form-control" type="text" formControlName="ConfirmPassword" [formControl]="userForm.controls['ConfirmPassword']" />
+                            <span class="text-danger" *ngIf="userForm.controls['ConfirmPassword'].hasError('required') && (userForm.controls['ConfirmPassword'].dirty || userForm.controls['ConfirmPassword'].touched)">Confirm Password is required</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label class="control-label">Work Email</label>
+                            <input [(ngModel)]="userdetails.WorkEmail" class="form-control" type="text" formControlName="WorkEmail" [formControl]="userForm.controls['WorkEmail']" />
+                            <span class="text-danger" *ngIf="userForm.controls['WorkEmail'].hasError('required') && (userForm.controls['WorkEmail'].dirty || userForm.controls['EmailID'].touched)">Email ID is required</span>
+
+
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="control-label">Department</label>
+                            <select class="form-control" appSelectValidator [(ngModel)]="userdetails.DeptId" formControlName="ddlDepartment" [formControl]="userForm.controls['ddlDepartment']">
+                                <option value="-1">--Select--</option>
+                                <option *ngFor="let department of userdetails.Departments" value={{department.Value}}>
+                                    {{department.Text}}
+                                </option>
+                            </select>
+                            <span class="text-danger" *ngIf="userForm.controls['ddlDepartment'].hasError('defaultselected') && (userForm.controls['ddlDepartment'].dirty || userForm.controls['ddlDepartment'].touched)">Department is required</span>
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="control-label">Role</label>
+                            <select class="form-control" appSelectValidator [(ngModel)]="userdetails.RoleID" formControlName="ddlRole" [formControl]="userForm.controls['ddlRole']">
+                                <option value="-1">--Select--</option>
+                                <option *ngFor="let role of userdetails.Roles" value={{role.Value}}>
+                                    {{role.Text}}
+                                </option>
+                            </select>
+                            <span class="text-danger" *ngIf="userForm.controls['ddlRole'].hasError('defaultselected') && (userForm.controls['ddlRole'].dirty || userForm.controls['ddlRole'].touched)">Role is required</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label class="control-label">Job Title</label>
+                            <select class="form-control" appSelectValidator [(ngModel)]="userdetails.JobId" formControlName="ddlJob" [formControl]="userForm.controls['ddlJob']">
+                                <option value="-1">--Select--</option>
+                                <option *ngFor="let job of userdetails.Jobs" value={{job.Value}}>
+                                    {{job.Text}}
+                                </option>
+                            </select>
+                            <span class="text-danger" *ngIf="userForm.controls['ddlJob'].hasError('defaultselected') && (userForm.controls['ddlJob'].dirty || userForm.controls['ddlJob'].touched)">Job is required</span>
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="control-label">Manager</label>
+                            <select class="form-control" appSelectValidator [(ngModel)]="userdetails.ManagerId" formControlName="ddlManager" [formControl]="userForm.controls['ddlManager']">
+                                <option value="-1">--Select--</option>
+                                <option *ngFor="let role of userdetails.Managers" value={{role.Value}}>
+                                    {{role.Text}}
+                                </option>
+                            </select>
+                            <span class="text-danger" *ngIf="userForm.controls['ddlManager'].hasError('defaultselected') && (userForm.controls['ddlManager'].dirty || userForm.controls['ddlManager'].touched)">Manager is required</span>
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="control-label">Date of Joining</label>
+                            <input [(ngModel)]="userdetails.DateofJoining" class="form-control" type="text" formControlName="DateofJoining" [formControl]="userForm.controls['DateofJoining']" bsDatepicker [bsConfig]="bsConfig" />
+                            <span class="text-danger" *ngIf="userForm.controls['DateofJoining'].hasError('required') && (userForm.controls['DateofJoining'].dirty || userForm.controls['DateofJoining'].touched)">Date of Joining is required</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+            <button type="submit" class="btn btn-oval btn-danger">Save</button>
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">&nbsp;</div>
+    </div>
+</form>

@@ -1,0 +1,67 @@
+<form [formGroup]="AssignForm" class="form-validate form-horizontal" (submit)="submitForm($event)" novalidate="">
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+            <div class="panel panel-info">
+                <div class="panel-heading">Assign Projects</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-1">&nbsp;</div>
+                        <div class="col-md-4">
+                            <label class="control-label">Projects</label>
+                            <select class="form-control" [(ngModel)]="projectId" formControlName="ddlProject" [formControl]="AssignForm.controls['ddlProject']">
+                                <option value="-1">--Select--</option>
+                                <option *ngFor="let project of projectlist" value={{project.ProjectID}}>
+                                    {{project.ProjectName}}
+                                </option>
+                            </select>
+                            <span class="text-danger" *ngIf="AssignForm.controls['ddlProject'].hasError('required') && (AssignForm.controls['ddlProject'].dirty || AssignForm.controls['ddlProject'].touched)">Project is required</span>
+                        </div>
+                        <div class="col-md-7">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">&nbsp;</div>
+                    </div>
+                    <div class="row" formArrayName="chkUsers">
+                        <div class="col-md-1">&nbsp;</div>
+                        <div class="col-md-10">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">My Team</div>
+                                <div class="panel-body">
+                                    <div *ngFor="let step of teamMemberslist; let i = index" class="col-xs-4">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" [formControlName]="i" [(ngModel)]="teamMemberslist[i].selectedUsers" [value]="teamMemberslist[i].RegistrationID">
+                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span> {{teamMemberslist[i].FullName}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1">&nbsp;</div>
+                        <div class="col-md-10">
+                            <span class="text-danger" *ngIf="AssignForm.controls['chkUsers'].status=='INVALID' && (AssignForm.controls['chkUsers'].dirty || AssignForm.controls['chkUsers'].touched)">Please Select at least one Team Member.</span>
+                        </div>
+                        <div class="col-md-1">&nbsp;</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+            <button type="submit" class="btn btn-oval btn-success">Assign Project</button>
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">&nbsp;</div>
+    </div>
+</form>

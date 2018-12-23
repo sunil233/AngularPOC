@@ -1,0 +1,106 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
+    <Authors>SUNIL THATIPAKA</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\app\customvalidations\CustomValidators.ts" />
+    <None Remove="ClientApp\app\models\admin-models\admin.assign-projects.model.ts" />
+    <None Remove="ClientApp\app\models\admin-models\admin.documents.model.ts" />
+    <None Remove="ClientApp\app\models\admin-models\admin.project.model.ts" />
+    <None Remove="ClientApp\app\models\admin-models\admin.timesheet.model.ts" />
+    <None Remove="ClientApp\app\models\admin-models\admin.timesheetdata.ts" />
+    <None Remove="ClientApp\app\models\admin-models\admin.users.model.ts" />
+    <None Remove="ClientApp\app\models\admin-models\valuedescription.model.ts" />
+    <None Remove="ClientApp\app\models\status.enum.ts" />
+    <None Remove="ClientApp\app\models\superadmin-models\assign-projects.model.ts" />
+    <None Remove="ClientApp\app\models\superadmin-models\assign-roles.model.ts" />
+    <None Remove="ClientApp\app\models\superadmin-models\departments.model.ts" />
+    <None Remove="ClientApp\app\models\superadmin-models\jobs.model.ts" />
+    <None Remove="ClientApp\app\models\superadmin-models\project.model.ts" />
+    <None Remove="ClientApp\app\models\superadmin-models\roles.model.ts" />
+    <None Remove="ClientApp\app\models\superadmin-models\users.model.ts" />
+    <None Remove="ClientApp\app\models\user.timesheet.model.ts" />
+    <None Remove="ClientApp\app\models\user-models\user.project.model.ts" />
+    <None Remove="ClientApp\app\models\user-models\user.task.model.ts" />
+    <None Remove="ClientApp\app\models\user-models\user.timesheetdata.ts" />
+    <None Remove="ClientApp\app\pages\guards\AdminAuthGuardService.ts" />
+    <None Remove="ClientApp\app\pages\guards\SuperAdminAuthGuardService.ts" />
+    <None Remove="ClientApp\app\pages\guards\UserAuthGuardService.ts" />
+    <None Remove="ClientApp\app\services\admin-services\admin.dashboard.service.ts" />
+    <None Remove="ClientApp\app\services\admin-services\admin.project.service.ts" />
+    <None Remove="ClientApp\app\services\admin-services\admin.task.service.ts" />
+    <None Remove="ClientApp\app\services\admin-services\admin.timesheet.service.ts" />
+    <None Remove="ClientApp\app\services\auth.service.ts" />
+    <None Remove="ClientApp\app\services\superadmin-services\superadmin.dashboard.service.ts" />
+    <None Remove="ClientApp\app\services\superadmin-services\superadmin.project.service.ts" />
+    <None Remove="ClientApp\app\services\superadmin-services\superadmin.roles.service.ts" />
+    <None Remove="ClientApp\app\services\superadmin-services\superadmin.user.service.ts" />
+    <None Remove="ClientApp\app\services\user.service.ts" />
+    <None Remove="ClientApp\app\services\user-services\user.project.service.ts" />
+    <None Remove="ClientApp\app\services\user-services\user.task.service.ts" />
+    <None Remove="ClientApp\app\services\user-services\user.timesheet.ts" />
+    <None Remove="ClientApp\app\shared\usercontrols\poc-multiselect\EqualPipe.ts" />
+    <None Remove="ClientApp\app\shared\usercontrols\poc-multiselect\poc-multiselect.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\customvalidations\CustomValidators.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\admin-models\admin.documents.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\admin-models\admin.project.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\admin-models\admin.assign-projects.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\admin-models\admin.users.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\admin-models\admin.timesheetdata.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\admin-models\admin.timesheet.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\superadmin-models\users.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\value-description.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\status.enum.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\superadmin-models\assign-projects.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\superadmin-models\assign-roles.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\superadmin-models\departments.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\superadmin-models\jobs.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\superadmin-models\roles.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\superadmin-models\project.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\user-models\user.project.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\user-models\user.task.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\user-models\user.timesheet.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\user-models\user.timesheetdata.ts" />
+    <TypeScriptCompile Include="ClientApp\app\pages\guards\UserAuthGuardService.ts" />
+    <TypeScriptCompile Include="ClientApp\app\pages\guards\AdminAuthGuardService.ts" />
+    <TypeScriptCompile Include="ClientApp\app\pages\guards\SuperAdminAuthGuardService.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\admin-services\admin.timesheet.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\admin-services\admin.dashboard.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\admin-services\admin.project.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\admin-services\admin.task.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\superadmin-services\superadmin.roles.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\superadmin-services\superadmin.project.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\superadmin-services\superadmin.user.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\superadmin-services\superadmin.dashboard.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\user-services\user.task.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\user-services\user.project.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\user-services\user.dashboard.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\auth.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\user-services\user.timesheet.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\usercontrols\poc-multiselect\poc-multiselect.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\pipes\equalpipe.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Properties\launchSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Shared\_Layout_Template.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-2">
+        <div id="divSubmittedHours">
+            <a href="#" (click)="onCardClick('submitted')" class="card-link">
+                <div class="card-counter primary">
+                    <i class="fa fa-code-fork"></i>
+                    <span class="count-numbers">{{SubmittedTimesheetCount}}</span>
+                    <span class="count-name">Submitted Hours</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div id="divRejectedHours">
+            <a href="#" (click)="onCardClick('rejected')" class="card-link">
+                <div class="card-counter danger">
+                    <i class="fa fa-ticket"></i>
+                    <span class="count-numbers">{{RejectedTimesheetCount}}</span>
+                    <span class="count-name">Rejected Hours</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div id="divApprovedHours">
+            <a href="#" (click)="onCardClick('approved')" class="card-link">
+                <div class="card-counter success">
+                    <i class="fa fa-database"></i>
+                    <span class="count-numbers">{{ApprovedTimesheetCount}}</span>
+                    <span class="count-name">Approved Hours</span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card-counter info">
+            <i class="fa fa-users"></i>
+            <span class="count-numbers">35</span>
+            <span class="count-name">Pending Tasks</span>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card-counter info">
+            <i class="fa fa-users"></i>
+            <span class="count-numbers">35</span>
+            <span class="count-name">Completed Tasks</span>
+        </div>
+    </div>
+    <div class="col-md-1">&nbsp;</div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-10" [ngBusy]="[dashboardbusy]">
+        <div class="{{panelClass}}">
+            <div class="panel-heading">{{panelheader}}</div>
+            <div class="panel-body">
+                <poc-grid [columns]="columns"
+                          [data]="timesheetdetails"
+                          [sort]="sorting"
+                          [isView]="true"
+                          [showPaging]="false"
+                          [showSearch]="false"
+                          (btnclick)="gridaction($event)">
+                </poc-grid>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1">&nbsp;</div>
+</div>

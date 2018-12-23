@@ -1,0 +1,54 @@
+<form [formGroup]="projectForm" class="form-validate form-horizontal" (submit)="submitForm($event, projectForm.value)" novalidate="">
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+            <div class="panel panel-info">
+                <div class="panel-heading">Project Information</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label class="control-label">Project Name</label>
+                            <input [(ngModel)]="projectdetails.ProjectName" class="form-control" type="text" [attr.disabled]="isDisable ? '' : null"  formControlName="ProjectName" [formControl]="projectForm.controls['ProjectName']" (blur)="onProjectNameChange()" />
+                            <span class="text-danger" *ngIf="projectForm.controls['ProjectName'].hasError('required') && (projectForm.controls['ProjectName'].dirty || projectForm.controls['ProjectName'].touched)">Project Name is required</span>
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="control-label">Project Code</label>
+                            <input [(ngModel)]="projectdetails.ProjectCode" class="form-control" type="text" formControlName="ProjectCode" [attr.disabled]="isDisable ? '' : null" [formControl]="projectForm.controls['ProjectCode']" (blur)="onProjectCodeChange()"/>
+                            <span class="text-danger" *ngIf="projectForm.controls['ProjectCode'].hasError('required') && (projectForm.controls['ProjectCode'].dirty || projectForm.controls['ProjectCode'].touched)">Project Code is required</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label class="control-label"> Active/InActive</label><br />
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" checked [(ngModel)]="projectdetails.IsActive" formControlName="IsActive" [formControl]="projectForm.controls['IsActive']">
+                                    <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                                </label>
+                            </div>
+                            <span class="text-danger" *ngIf="projectForm.controls['IsActive'].hasError('required') && (projectForm.controls['IsActive'].dirty || projectForm.controls['IsActive'].touched)">Status is required</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+            <button type="submit" class="btn btn-oval btn-success">Save</button>&nbsp;
+            <button type="button" class="btn btn-oval btn-danger" (click)="onCancel()">Cancel</button>
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">&nbsp;</div>
+    </div>
+</form>

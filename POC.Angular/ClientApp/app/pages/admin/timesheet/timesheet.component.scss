@@ -1,0 +1,32 @@
+﻿.table-bordered{
+    font-size:small;
+    font-weight:normal;
+}
+.table-bordered > thead > tr > th {
+    cursor: pointer;
+    position: relative;
+    background-color: #12aaf5;
+    color:#fff;
+}
+
+    .table-bordered > thead > tr > th:after,
+    .table-bordered > thead > tr > th.sort-false:after,
+    .table-bordered > thead > tr > th.sort-true:after {
+        font-family: FontAwesome;
+        padding-left: 5px;
+    }
+
+    .table-bordered > thead > tr > th:after {
+      
+    }
+
+.table-bordered > thead > tr > th.sort-false:after {
+    content: "\f0de";
+    color: #ddd;
+}
+
+.table-bordered > thead > tr > th.sort-true:after {
+    content: "\f0dd";
+    color: #ddd;
+}
+

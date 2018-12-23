@@ -1,0 +1,71 @@
+<form [formGroup]="taskForm" class="form-validate form-horizontal" (submit)="submitForm($event)" novalidate="">
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+            <div class="panel panel-info">
+                <div class="panel-heading">Task Information</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label class="control-label">Project</label>                         
+                            <select class="form-control" appSelectValidator [(ngModel)]="taskdetails.ProjectID" formControlName="ddlProject" [attr.disabled]="isDisable ? '' : null">
+                                <option value="-1">--Select--</option>
+                                <option *ngFor="let project of projectdetails" value={{project.ProjectID}}>
+                                    {{project.ProjectName}}
+                                </option>
+                            </select>
+                            <span class="text-danger" *ngIf="taskForm.controls['ddlProject'].hasError('defaultselected') && (taskForm.controls['ddlProject'].dirty || taskForm.controls['ddlProject'].touched)">Project is required</span>
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="control-label">Status</label>
+                            <select class="form-control" appSelectValidator [(ngModel)]="taskdetails.Status" formControlName="ddlStatus">
+                                <option value="-1">--Select--</option>
+                                <option value="1">New</option>
+                                <option value="2">Active</option>
+                                <option value="3">Completed-</option>
+                            </select>
+                            <span class="text-danger" *ngIf="taskForm.controls['ddlStatus'].hasError('defaultselected') && (taskForm.controls['ddlStatus'].dirty || taskForm.controls['ddlStatus'].touched)">Status is required</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <label class="control-label">Task Name</label>
+                            <input [(ngModel)]="taskdetails.Taskname" class="form-control" type="text" formControlName="TaskName" [attr.disabled]="isDisable ? '' : null" [formControl]="taskForm.controls['TaskName']" (blur)="onTaskNameChange()" />
+                            <span class="text-danger" *ngIf="taskForm.controls['TaskName'].hasError('required') && (taskForm.controls['TaskName'].dirty || taskForm.controls['TaskName'].touched)">Task is required</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <label class="control-label">Comments</label>
+                            <textarea [(ngModel)]="taskdetails.Comments" class="form-control" type="text" formControlName="Comments" [formControl]="taskForm.controls['Comments']"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label class="control-label"> Active/InActive</label><br />
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" checked [(ngModel)]="taskdetails.IsActive" formControlName="IsActive" [formControl]="taskForm.controls['IsActive']">
+                                    <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                                </label>
+                            </div>
+                            <span class="text-danger" *ngIf="taskForm.controls['IsActive'].hasError('required') && (taskForm.controls['IsActive'].dirty || taskForm.controls['IsActive'].touched)">Status is required</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+            <button type="submit" class="btn btn-oval btn-success">Save</button>&nbsp;
+            <button type="button" class="btn btn-oval btn-danger" (click)="onCancelClick()">Cancel</button>
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">&nbsp;</div>
+    </div>
+</form>

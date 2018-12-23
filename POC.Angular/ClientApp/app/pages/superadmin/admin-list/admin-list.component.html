@@ -1,0 +1,27 @@
+<ul class="breadcrumb">
+    <li><a href="#">Add</a> <span class="divider"></span></li>
+    <li><a href="#">Employees</a> <span class="divider"></span></li>    
+    <li class="active">All Managers</li>
+</ul>
+<div class="row">
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-10">&nbsp;<b>List of Admin's</b></div>
+    <div class="col-md-1">&nbsp;</div>
+</div>
+<div class="row">
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-10">
+        <poc-grid [columns]="columns"
+                  [data]="adminuserdetails"
+                  [sort]="sorting"
+                  [isView]="true"
+                  [showPaging]="true"
+                  [showSearch]="true"
+                  (btnclick)="gridaction($event)">
+        </poc-grid>
+    </div>
+    <div class="col-md-1">&nbsp;</div>
+</div>
+<div class="row">
+    <div class="col-md-12">&nbsp;</div>
+</div>

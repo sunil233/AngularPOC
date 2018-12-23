@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "es5",
+    "sourceMap": true,
+    "declaration": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipDefaultLibCheck": true,
+    "outDir": "../wwwroot/build/",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [
+      "node"      
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  },
+  "exclude": [
+    "bin",
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}  
+

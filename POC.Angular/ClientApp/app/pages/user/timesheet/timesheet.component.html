@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <input type="button" id="btnPreviousWeek" value="Previous" class="btn btn-primary mr-0 mb-0" (click)="GetPreviousWeek()" />&nbsp;&nbsp;
+            <input type="button" id="btncurrentWeek" value="Current Week" class="btn btn-primary mr-0 mb-2" (click)="GetCurrentWeek()" />&nbsp;&nbsp;
+            <input type="button" id="btnNextWeek" value="Next" class="btn btn-primary mb-2" (click)="GetNextWeek()" />&nbsp;&nbsp;
+
+        </div>
+        <div class="col-md-5">
+            <label id="timeperiod" class="pull-right"></label>
+        </div>
+        <div class="col-md-2">
+            <b>Total Hours:</b>  <span id='lbltotalhours' name='lbltotalhours'></span>
+        </div>
+    </div>
+    <div class="row" [ngBusy]="[timesheetbusy]">
+        <div class="col-md-12">
+            <h2 style="text-align: center;">Timesheet</h2> 
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr *ngFor="let week of TimeSheetList| slice:0:1">
+                        <th>Project</th>
+                        <th>Task</th>
+                        <th *ngFor="let day of week" class="text-center">
+                            {{day.DaysofWeek}}<br />
+                            {{day.Period| date: 'MM/dd/yyyy'}}
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let week of TimeSheetList;  index as i">
+                        <td style="width:25%">
+                            <select class="form-control" [(ngModel)]="selectedProject[i]" (change)="OnProjectChange($event.target.value,week,i)" [disabled]="iscontrolDisabled">
+                                <option value="0">--Select--</option>
+                                <option *ngFor="let project of projects" value={{project.ProjectID}}>
+                                    {{project.ProjectName}}
+                                </option>
+                            </select>
+                        </td>
+                        <td style="width:25%">
+                            <select class="form-control" [(ngModel)]="selectedTask[i]" (change)="OnTaskChange($event.target.value,week,i)" [disabled]="iscontrolDisabled">
+                                <option value="0">--Select--</option>
+                                <option *ngFor="let task of taskdetails[i]" value={{task.TaskID}}>
+                                    {{task.Taskname}}
+                                </option>
+                            </select>
+                        </td>
+                        <td *ngFor="let day of week" class="text-center">
+                            <input [(ngModel)]="day.Hours" class="form-control" type="text" name="{{day.Hours}}"  [disabled]="iscontrolDisabled"/>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" (click)="deleteRow(i)" [disabled]="iscontrolDisabled"><i class="fa fa-trash" aria-hidden="true"></i> </button>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">
+            <button class="btn btn-oval btn-warning" type="button" (click)="addRow()" [disabled]="iscontrolDisabled">Add Hours</button>
+        </div>
+        <div class="col-md-8">
+
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-oval btn-success mr-2" type="button" (click)="save()" [disabled]="iscontrolDisabled">Save</button> &nbsp; &nbsp;<button class="btn btn-oval btn-primary mr-2" type="button" (click)="submittosupervisor()" [disabled]="iscontrolDisabled">Submit to Supervisor</button> &nbsp; &nbsp;
+        </div>
+    </div>
+</div>
+

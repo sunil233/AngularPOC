@@ -1,0 +1,119 @@
+<form [formGroup]="documentForm" class="form-validate form-horizontal" (submit)="submitForm($event)" novalidate="">
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+            <div class="panel panel-info">
+                <div class="panel-heading">Task Information</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <label class="control-label">Project</label>
+                            <select class="form-control" appSelectValidator [(ngModel)]="document.ProjectId" formControlName="ddlProject" [attr.disabled]="isDisable ? '' : null">
+                                <option value="-1">--Select--</option>
+                                <option *ngFor="let project of projectdetails" value={{project.ProjectID}}>
+                                    {{project.ProjectName}}
+                                </option>
+                            </select>
+                            <span class="text-danger" *ngIf="documentForm.controls['ddlProject'].hasError('defaultselected') && (documentForm.controls['ddlProject'].dirty || documentForm.controls['ddlProject'].touched)">Project is required</span>
+                        </div>
+                        <div class="col-lg-3">
+                            <label class="control-label">Document Type</label>
+                            <select class="form-control" appSelectValidator [(ngModel)]="document.DocumentTypeId" formControlName="ddlDocumentType">
+                                <option value="-1">--Select--</option>
+                                <option value="1">Project Schedule</option>
+                                <option value="2">Risk Management:</option>
+                                <option value="3">Issues Log</option>
+                                <option value="4">Project Budget</option>
+                                <option value="5">Communication Plan</option>
+                                <option value="6">Project Status Report</option>
+                                <option value="7">Meeting Agenda/Minutes</option>
+                                <option value="8">Quality Assurance (QA) Test Plan</option>
+                                <option value="9">Project Management Plan</option>
+                                <option value="10">Functional Specification Document</option>
+                                <option value="11">Business Requirement Specification Document</option>
+                            </select>
+                            <span class="text-danger" *ngIf="documentForm.controls['ddlDocumentType'].hasError('defaultselected') && (documentForm.controls['ddlDocumentType'].dirty || documentForm.controls['ddlDocumentType'].touched)">Document Type is required</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <label class="control-label">Upload Document</label>
+                            <input type="file" ng2FileSelect [uploader]="uploader" multiple /><br />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <label class="control-label">Title</label>
+                            <input [(ngModel)]="document.DocumentTitle" class="form-control" type="text" formControlName="DocumentTitle" [attr.disabled]="isDisable ? '' : null" [formControl]="documentForm.controls['DocumentTitle']" />
+                            <span class="text-danger" *ngIf="documentForm.controls['DocumentTitle'].hasError('required') && (documentForm.controls['DocumentTitle'].dirty || documentForm.controls['DocumentTitle'].touched)">Title is required</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <label class="control-label">Description</label>
+                            <textarea [(ngModel)]="document.DocumentDescription" class="form-control" type="text" formControlName="DocumentDescription" [formControl]="documentForm.controls['DocumentDescription']"></textarea>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="uploader?.queue?.length">
+                        <div class="col-md-12" style="margin-bottom: 40px">
+                            <div class="panel">
+                                <div class="panel-body">
+                                    <p class="pull-right label label-info ng-binding ng-scope" *ngIf="uploader?.queue?.length">Queue length: {{ uploader?.queue?.length }}</p>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th width="50%">Name</th>
+                                                <th>Size</th>
+                                                <th>Progress</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let item of uploader.queue">
+                                                <td><strong>{{ item?.file?.name }}</strong></td>
+                                                <td nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>
+                                                <td>
+                                                    <div class="progress" style="margin-bottom: 0;">
+                                                        <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span *ngIf="item.isSuccess"><i class="fa fa-ok"></i></span>
+                                                    <span *ngIf="item.isCancel"><i class="icon-close mr"></i></span>
+                                                    <span *ngIf="item.isError"><i class="fa fa-remove"></i></span>
+                                                </td>
+                                                <td nowrap>
+                                                    <button type="button" class="btn btn-info btn-xs" (click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess">
+                                                        <span class="fa icon-cloud-upload mr"></span> Upload
+                                                    </button>
+                                                    <button type="button" class="btn btn-warning btn-xs" (click)="item.cancel()" [disabled]="!item.isUploading">
+                                                        <span class="icon-close mr"></span> Cancel
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger btn-xs" (click)="item.remove()">
+                                                        <span class="icon-trash mr"></span> Remove
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+            <button type="submit" class="btn btn-oval btn-success">Upload All</button>&nbsp;
+            <button type="button" class="btn btn-oval btn-danger" (click)="onCancelClick()">Cancel</button>
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">&nbsp;</div>
+    </div>
+</form>

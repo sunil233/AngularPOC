@@ -1,0 +1,5 @@
+C:\Users\sunil\source\repos\WebTimeSheetDatabase\WebTimeSheetDatabase\bin\Debug\WebTimeSheetDatabase.dacpac
+C:\Users\sunil\source\repos\WebTimeSheetDatabase\WebTimeSheetDatabase\bin\Debug\WebTimeSheetDatabase.dll
+C:\Users\sunil\source\repos\WebTimeSheetDatabase\WebTimeSheetDatabase\bin\Debug\WebTimeSheetDatabase.pdb
+C:\Users\sunil\source\repos\WebTimeSheetDatabase\WebTimeSheetDatabase\obj\Debug\WebTimeSheetDatabase.dll
+C:\Users\sunil\source\repos\WebTimeSheetDatabase\WebTimeSheetDatabase\obj\Debug\WebTimeSheetDatabase.pdb

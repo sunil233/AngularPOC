@@ -1,0 +1,19 @@
+html,body,app-root{
+    height:100%
+}
+
+app-root,.wrapper{
+    display:block;
+}
+
+.content-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+
+    &.ng-leave {
+        display: none;
+    }
+}

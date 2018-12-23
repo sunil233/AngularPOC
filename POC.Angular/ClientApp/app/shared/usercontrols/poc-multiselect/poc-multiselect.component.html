@@ -1,0 +1,16 @@
+﻿<div >
+     <button type="button" class="btn btn-secondary dropdown-toggle" (click)="toggleSelect()">
+        <span class="pull-left" [innerHtml]="localHeader"></span>
+        <span class="caret pull-right"></span>
+    </button>
+    <ul class="dropdown-menu multi-select-popup" [ngStyle]="{display:isOpen ? 'block' : 'none'}" style="display:block;">
+        <li *ngFor="let item of items" class="dropdown-item">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" (click)="select(item)">
+                    <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span> {{item.label}}
+                </label>
+            </div>
+        </li>
+    </ul>
+</div>

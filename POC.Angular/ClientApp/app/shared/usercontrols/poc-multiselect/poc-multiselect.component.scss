@@ -1,0 +1,115 @@
+﻿
+.checkbox label:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.checkbox .cr {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #a9a9a9;
+    border-radius: .25em;
+    width: 1.3em;
+    height: 1.3em;
+    float: left;
+    margin-right: .5em;
+}
+
+.checkbox .cr .cr-icon {
+    position: absolute;
+    font-size: .8em;
+    line-height: 0;
+    top: 50%;
+    left: 5%;
+}
+
+.checkbox label input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox label input[type="checkbox"] + .cr > .cr-icon {
+    opacity: 0;
+}
+
+.checkbox label input[type="checkbox"]:checked + .cr > .cr-icon {
+    opacity: 1;
+}
+
+.checkbox label input[type="checkbox"]:disabled + .cr {
+    opacity: .5;
+}
+
+
+poc-multiselect {
+    display: block;
+}
+.btn {
+    width: 100%;
+    background-color: #FFF;
+}
+.btn.has-error {
+    border: 1px solid #a94442 !important;
+    color: #db524b;
+}
+.btn-group {
+    min-width: 180px;
+    width: 100%;
+    vertical-align: top;
+    margin-top: -6px;
+    height:25px;
+    background-color:aqua
+}
+.btn-group > button {
+    padding-right: 0px;
+}
+.btn-group > button > .caret {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid black;
+    right: 5px;
+    top: 45%;
+    position: absolute;
+}
+
+.dropdown-toggle:after {
+    content: none;
+    width: 100%;
+    
+}
+.dropdown-menu {
+    max-height: 300px;
+    min-width: 200px;
+    overflow-y: auto;
+    width: 100%;
+   
+    margin-top: 0px;
+}
+.dropdown-menu .filter > input {
+    width: 99%;
+}
+.dropdown-menu .filter .clear-filter {
+    cursor: pointer;
+    pointer-events: all;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+}
+.dropdown-menu {
+    /* width: 100%; */
+    box-sizing: border-box;
+    padding: 0px;
+}
+ .dropdown-menu > li > a {
+    padding: 3px 10px;
+    cursor: pointer;
+}
+.dropdown-menu > li > a i {
+    margin-right: 0px;
+}

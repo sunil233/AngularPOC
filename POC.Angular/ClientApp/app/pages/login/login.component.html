@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="login-panel">
+        <div class="logindiv">
+            <div class="panel-heading text-center" style="background-color:rgba(255, 144, 43, 0); padding-bottom:0;">
+                <h3 class="loginBoldColor ng-binding">Time Sheet Management.</h3>
+            </div>
+            <div class="panel-body" style="padding-top:0;">
+                <p class="text-center control-label loginTextColor">Login to Your Account</p>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" formControlName="username" id="username">
+                        <div *ngIf="submitted && loginForm.controls.username.errors" class="error">
+                            <div *ngIf="loginForm.controls.username.errors.required">Uername is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" formControlName="password" id="pwd">
+                        <div *ngIf="submitted && loginForm.controls.password.errors" class="error">
+                            <div *ngIf="loginForm.controls.password.errors.required">Password is required</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-default">Login</button>
+                    <div *ngIf="invalidLogin" class="error">
+                        <div>Invalid credentials.</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

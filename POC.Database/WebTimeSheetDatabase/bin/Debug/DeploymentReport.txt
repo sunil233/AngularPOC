@@ -1,0 +1,47 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[AssignedRoles] (Table)
+       [dbo].[AuditTB] (Table)
+       [dbo].[Department] (Table)
+       [dbo].[DescriptionTB] (Table)
+       [dbo].[Documents] (Table)
+       [dbo].[ELMAH_Error] (Table)
+       [dbo].[Expense] (Table)
+       [dbo].[ExpenseAuditTB] (Table)
+       [dbo].[Jobs] (Table)
+       [dbo].[Locations] (Table)
+       [dbo].[NotificationsTB] (Table)
+       [dbo].[ProjectMaster] (Table)
+       [dbo].[Registration] (Table)
+       [dbo].[Roles] (Table)
+       [dbo].[Task] (Table)
+       [dbo].[TimeSheetAuditTB] (Table)
+       [dbo].[TimeSheetDetails] (Table)
+       [dbo].[TimeSheetMaster] (Table)
+       [dbo].[DF_ELMAH_Error_ErrorId] (Default Constraint)
+       [dbo].[FK_ParentId_Task] (Foreign Key)
+       [dbo].[ELMAH_GetErrorsXml] (Procedure)
+       [dbo].[ELMAH_GetErrorXml] (Procedure)
+       [dbo].[ELMAH_LogError] (Procedure)
+       [dbo].[GetDescriptionbyTimeSheetMasterID] (Procedure)
+       [dbo].[Usp_ChangeTimesheetStatus] (Procedure)
+       [dbo].[Usp_DeleteExpenseandDocuments] (Procedure)
+       [dbo].[Usp_GetHoursbyTimeSheetMasterID] (Procedure)
+       [dbo].[Usp_GetTimeSheetbyFromDateandToDateTimeSheet] (Procedure)
+       [dbo].[Usp_GetTimeSheetMasterIDTimeSheet] (Procedure)
+       [dbo].[Usp_GetWeekTimeSheetDetails] (Procedure)
+       [dbo].[Usp_GetWeekTimeSheetDetailsByDateRange] (Procedure)
+       [dbo].[Usp_UpdateUserRole] (Procedure)
+       [dbo].[AssignedRoles].[MS_Description] (Extended Property)
+
+** Supporting actions

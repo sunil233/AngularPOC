@@ -1,0 +1,137 @@
+﻿.table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 2px;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+.table-sortable{
+    font-size:small;
+    font-weight:normal;
+}
+.table-sortable > thead > tr > th {
+    cursor: pointer;
+    position: relative;
+    background-color: #12aaf5;
+}
+
+    .table-sortable > thead > tr > th:after,
+    .table-sortable > thead > tr > th.sort-false:after,
+    .table-sortable > thead > tr > th.sort-true:after {
+        font-family: FontAwesome;
+        padding-left: 5px;
+    }
+
+    .table-sortable > thead > tr > th:after {
+      
+    }
+
+.table-sortable > thead > tr > th.sort-false:after {
+    content: "\f0de";
+    color: #ddd;
+}
+
+.table-sortable > thead > tr > th.sort-true:after {
+    content: "\f0dd";
+    color: #ddd;
+}
+.table-sortable >  tr > td {
+    padding: 5px;
+}
+.table-btn {
+    background-color: #428bca;
+    color: white;
+}
+
+
+tfoot {
+    height: 10px;
+    padding-top: 2px;
+    background-color: #ddd
+}
+.pagertop {
+    margin-top: -21px;
+}
+.table-label{
+    font-weight:normal;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 20px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 26px;
+  left: 4px;
+  bottom: 0px;
+  right:2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #13671a;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #13671a;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 18px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.grid-btn {
+    display: inline-block;   
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}

@@ -1,0 +1,57 @@
+﻿<div>
+    <table class="table table-hover table-striped table-sortable" *ngIf='data'>
+        <thead>
+            <tr>
+                <th *ngFor="let column of columns" [class]="selectedClass(column.name)" [style.width.%]="column.width"
+                    (click)="changeSorting(column.name)">
+                    {{column.headertext}}
+                </th>
+                <th [attr.colspan]="gridbtns.length" *ngIf="gridbtns.length>0">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of pdata | orderby : convertSorting() | paginate: { itemsPerPage: itemsPerPage, currentPage: page }">
+                <td *ngFor="let column of columns" [ngSwitch]="column.filter">
+                    <label [innerHTML]="row[column.name] | format : column.filter" class="table-label" *ngSwitchDefault></label>
+                    <div *ngSwitchCase="'bool'" class="text-danger">
+                        <label class="switch" data-on="YES">
+                            <input type="checkbox" checked [(ngModel)]="row[column.name]">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </td>
+                <ng-container *ngFor="let btn of gridbtns">
+                    <td *ngIf="!btn.ishide">
+                        <button type="button" class="btn btn-sm grid-btn"
+                                (click)="click(btn,row)">
+                            {{btn.title}}
+                        </button>
+                    </td>
+                </ng-container>
+            </tr>
+            <tr *ngIf='pdata && pdata.length<1'>
+                <td [attr.colspan]="colcount"><div>No record found!</div></td>
+            </tr>
+            <tr>
+                <td [attr.colspan]="colcount">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-lg-3  col-md-3 col-sm-3" *ngIf="showSearch">
+                                <input #search class="form-control pull-right" type="text" placeholder="Search..." (keyup)='onSearch($event,search.value)'>
+                            </div>
+                            <div class="col-lg-3  col-md-3 col-sm-3">
+                                <label>Total Records: {{length}}</label>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 pagertop" *ngIf="showPaging">
+                                <pagination class="pagination-sm pull-right" [(ngModel)]="page" [totalItems]="length" [itemsPerPage]="itemsPerPage" [maxSize]="maxSize" [boundaryLinks]="true" [rotate]="false" (numPages)="numPages = $event" (pageChanged)="onChangeTable(config, $event)"></pagination>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+</div>

@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Repository Patterns in WEB API</title>
+    <style>
+        body {
+            background: #fff;
+            color: #505050;
+            font: 14px 'Segoe UI', tahoma, arial, helvetica, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+
+        #header {
+            background: #efefef;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: normal;
+            margin: 0;
+            padding: 0 30px;
+            line-height: 150px;
+        }
+
+        p {
+            font-size: 20px;
+            color: #fff;
+            background: #969696;
+            padding: 0 30px;
+            line-height: 50px;
+        }
+
+        .main {
+            padding: 5px 10px;
+        }
+
+        .section {
+            width: 30.7%;
+            float: left;
+            margin: 0 0 0 4%;
+        }
+
+            .section h2 {
+                font-size: 13px;
+                text-transform: uppercase;
+                margin: 0;
+                border-bottom: 1px solid silver;
+                padding-bottom: 12px;
+                margin-bottom: 8px;
+            }
+
+            .section.first {
+                margin-left: 0;
+            }
+
+                .section.first h2 {
+                    font-size: 24px;
+                    text-transform: none;
+                    margin-bottom: 25px;
+                    border: none;
+                }
+
+                .section.first li {
+                    border-top: 1px solid silver;
+                    padding: 8px 0;
+                }
+
+            .section.last {
+                margin-right: 0;
+            }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            line-height: 20px;
+        }
+
+        li {
+            padding: 4px 0;
+        }
+
+        a {
+            color: #267cb2;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+
+ 
+</head>
+<body>
+   <table>
+       <tr><td colspan="4"><div id="divActualEffort"></div></td></tr>
+   </table>
+    <div id="header">
+        <h2>Repository Patterns ,Dependency Injection, WEB API,WCF Services,JQuery Tutorial</h2>
+        <p>Congratulations! You've created a project</p>
+    </div>
+
+    <div id="main">
+        <div class="main section first">
+            <h4>Repository Patterns,Dependency Injection ,WCF Services and WEB API</h4>
+            <ul>
+                <li>  Calling a <b>GetProducts</b> method in  <b>Products</b>  WebApi Controller</li>
+                <li><a href="http://localhost:57894/api/Product/GetProducts/"> http://localhost:57894/api/Product/GetProducts/ </a></li>
+
+            </ul>
+            <h4>  See below Sample Reference</h4>
+            <ul>
+
+                <li><a href="https://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api">https://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api </a></li>
+
+            </ul>
+            <h4>  Dependency Injection (DI)</h4>
+            <ul>
+
+                <li> Dependency Injection (DI) is a design pattern that demonstrates how to create loosely coupled classes</li>
+                <li>  DI is a great way to reduce tight coupling between software components</li>
+                <li>The Dependency Injection pattern uses a builder object to initialize objects and provide the required dependencies to the object means it allows you to "inject" a dependency from outside the class</li>
+            </ul>
+            <h4>  Constructor Injection</h4>
+            <ul>
+
+                <li> Dependency Injection is done by supplying the DEPENDENCY through the class’s constructor when instantiating that class.</li>
+              
+            </ul> 
+        </div>
+
+        <div class="main section first">
+            <h4>JQUERY</h4>
+            <ul>
+                <li> jQuery is a JavaScript Library.</li>
+                <li>
+                    jQuery greatly simplifies JavaScript programming.
+                </li>
+            </ul>
+            <h4>  jQuery DOM Manipulation</h4>
+            <h5>The jquery get() and post() methods are used to request data from the server with an http get or post request.  </h5>
+            <ul>
+                <li>One very important part of jQuery is the possibility to manipulate the DOM.</li>
+                <li>jQuery comes with a bunch of DOM related methods that make it easy to access and manipulate elements and attributes.</li>
+            </ul>
+            <h4> jQuery - AJAX get() and post() Methods</h4>
+            <ul>
+                <li>GET - Requests data from a specified resource</li>
+                <li>Sample GET Method:&nbsp; &nbsp;<a href="http://localhost:57894/Pages/customers.html">&nbsp; &nbsp;   http://localhost:57894/Pages/customers.html</a></li>
+                <li>POST can also be used to get some data from the server. However, the POST method NEVER caches data, and is often used to send data along with the request.</li>
+                <li>Sample POST Method:&nbsp; &nbsp;<a href="http://localhost:57894/Pages/ChangeRequest.aspx">&nbsp; &nbsp;  http://localhost:57894/Pages/ChangeRequest.aspx</a></li>
+            </ul>
+
+        </div>
+        <div class="main section first">
+            <h4>WCF</h4>
+            <ul>
+                <li>Windows Communication Foundation (WCF) is a framework for building service-oriented applications. Using WCF, you can send data as asynchronous messages from one service endpoint to another. A service endpoint can be part of a continuously available service hosted by IIS, or it can be a service hosted in an application. An endpoint can be a client of a service that requests data from a service endpoint. The messages can be as simple as a single character or word sent as XML, or as complex as a stream of binary data.</li>
+              
+            </ul>
+            <h4> Four Steps to Create First WCF Service</h4>
+          
+            <ul>
+                <li>Step 1: Create Service Contract .</li>
+                <li>Step 2: Expose Endpoints with Metadata </li>
+                <li>Step 3: Implement Service  </li>
+                <li>Step 4: Consume Service </li>
+            </ul>
+            <h4> SAMPLE WCF SERVICE</h4>
+            <ul>
+               
+                <li>&nbsp; &nbsp;<a href="http://localhost:12437/ProductManager.svc"> http://localhost:12437/ProductManager.svc</a></li>
+              
+            </ul>
+
+        </div>
+     
+    </div>
+
+</body>
+</html>

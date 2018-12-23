@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-10">&nbsp;<b>Remove Manager</b></div>
+    <div class="col-md-1">&nbsp;</div>
+</div>
+<div class="row" [ngBusy]="[projectsbusy]">
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-10">
+        <poc-custom-grid [columns]="columns"
+                  [data]="roles"
+                  [sort]="sorting"
+                  [gridbtns]="gridbtns"
+                  [isEdit]="true"
+                  [showPaging]="true"
+                  [showSearch]="true"
+                  (btnclick)="gridaction($event)" [ngBusy]="projectsbusy">
+        </poc-custom-grid>
+    </div>
+    <div class="col-md-1">&nbsp;</div>
+</div>
+<div class="row">
+    <div class="col-md-12">&nbsp;</div>
+</div>

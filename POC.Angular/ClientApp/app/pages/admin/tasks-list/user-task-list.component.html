@@ -1,0 +1,52 @@
+
+<form [formGroup]="taskForm" class="form-validate form-horizontal" (submit)="submitForm($event)" novalidate="">
+    <div class="row">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-2">
+            <label class="control-label">Project</label>
+            {{projectdetails|json}}
+            <select class="form-control" appSelectValidator [(ngModel)]="projectId" formControlName="ddlProject" [attr.disabled]="isDisable ? '' : null">
+                <option value="-1">--Select--</option>
+                <option value="0">--All--</option>
+                <option *ngFor="let project of projectlist" value={{project.ProjectID}}>
+                    {{project.ProjectName}}
+                </option>
+            </select>
+            <span class="text-danger" *ngIf="taskForm.controls['ddlProject'].hasError('defaultselected') && (taskForm.controls['ddlProject'].dirty || taskForm.controls['ddlProject'].touched)">Project is required</span>
+        </div>
+        <div class="col-md-2">
+            <label class="control-label">Team Member</label>
+            <select class="form-control" appSelectValidator [(ngModel)]="TeamMemberId" formControlName="ddlUser" [attr.disabled]="isDisable ? '' : null">
+                <option value="-1">--Select--</option>
+                <option value="0">--All--</option>
+                <option *ngFor="let member of teamMemberslist" value={{member.RegistrationID}}>
+                    {{member.FullName}}
+                </option>
+            </select>
+            <span class="text-danger" *ngIf="taskForm.controls['ddlUser'].hasError('defaultselected') && (taskForm.controls['ddlUser'].dirty || taskForm.controls['ddlProject'].touched)">Team Member is required</span>
+        </div>
+        <div class="col-md-2">
+            <br /> 
+            <button type="submit" class="btn btn-oval btn-success mt-0">Search</button>&nbsp;
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">&nbsp;</div>
+    </div>
+    <div class="row" [ngBusy]="[tasksbusy]">
+        <div class="col-md-1">&nbsp;</div>
+        <div class="col-md-10">
+            <poc-grid [columns]="columns"
+            [data]="taskdetails"
+            [sort]="sorting"
+            [showSearch]="true"           
+            (btnclick)="gridaction($event)" [ngBusy]="projectsbusy">
+            </poc-grid>
+        </div>
+        <div class="col-md-1">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">&nbsp;</div>
+    </div>
+</form>
