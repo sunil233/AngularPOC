@@ -35,21 +35,21 @@
 GO
 
 ALTER TABLE [dbo].[Registration]
-	WITH CHECK ADD CONSTRAINT [FK_Registration_Departments] FOREIGN KEY ([DeptId]) REFERENCES [dbo].[Department]([DeptId])
+	 ADD CONSTRAINT [FK_Registration_Departments] FOREIGN KEY ([DeptId]) REFERENCES [dbo].[Department]([DeptId])
 GO
 
 ALTER TABLE [dbo].[Registration] CHECK CONSTRAINT [FK_Registration_Departments]
 GO
 
 ALTER TABLE [dbo].[Registration]
-	WITH CHECK ADD CONSTRAINT [FK_Registration_Jobs] FOREIGN KEY ([JobId]) REFERENCES [dbo].[Jobs]([JobId])
+	 ADD CONSTRAINT [FK_Registration_Jobs] FOREIGN KEY ([JobId]) REFERENCES [dbo].[Jobs]([JobId])
 GO
 
 ALTER TABLE [dbo].[Registration] CHECK CONSTRAINT [FK_Registration_Jobs]
 GO
 
-ALTER TABLE [dbo].[Registration]
-	WITH CHECK ADD CONSTRAINT [FK_Registration_Roles] FOREIGN KEY ([RoleID]) REFERENCES [dbo].[Roles]([RoleID])
+ALTER TABLE [dbo].[Registration] 
+ ADD CONSTRAINT [FK_Registration_Roles] FOREIGN KEY ([RoleID]) REFERENCES [dbo].[Roles]([RoleID])
 GO
 
 ALTER TABLE [dbo].[Registration] CHECK CONSTRAINT [FK_Registration_Roles]

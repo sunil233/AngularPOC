@@ -210,8 +210,8 @@
       <Project>{2ACCB7ED-9572-4EF6-9FA0-5B195C470962}</Project>
       <Name>POC.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\POCRepository\POC.Repository.csproj">
-      <Project>{d61c848a-6235-41d8-bbbf-a064f9ac38d4}</Project>
+    <ProjectReference Include="..\POC.Repository\POC.Repository.csproj">
+      <Project>{97f74cae-a6d0-4d17-8405-81fe5617ce53}</Project>
       <Name>POC.Repository</Name>
     </ProjectReference>
   </ItemGroup>

@@ -23,6 +23,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <ValidateCasingOnIdentifiers>False</ValidateCasingOnIdentifiers>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -69,13 +70,10 @@
     <Build Include="dbo\Stored Procedures\ELMAH_LogError.sql" />
     <Build Include="dbo\Stored Procedures\GetDescriptionbyTimeSheetMasterID.sql" />
     <Build Include="dbo\Stored Procedures\Usp_ChangeTimesheetStatus.sql" />
-    <Build Include="dbo\Stored Procedures\Usp_DeleteExpenseandDocuments.sql" />
     <Build Include="dbo\Stored Procedures\Usp_GetHoursbyTimeSheetMasterID.sql" />
     <Build Include="dbo\Stored Procedures\Usp_GetTimeSheetbyFromDateandToDateTimeSheet.sql" />
     <Build Include="dbo\Stored Procedures\Usp_GetTimeSheetMasterIDTimeSheet.sql" />
-    <Build Include="dbo\Stored Procedures\Usp_GetWeekTimeSheetDetails.sql" />
     <Build Include="dbo\Stored Procedures\Usp_GetWeekTimeSheetDetailsByDateRange.sql" />
-    <Build Include="dbo\Stored Procedures\Usp_UpdateUserRole.sql" />
     <Build Include="dbo\Tables\AssignedRoles.sql" />
     <Build Include="dbo\Tables\AuditTB.sql" />
     <Build Include="dbo\Tables\Department.sql" />
@@ -98,10 +96,19 @@
     <None Include="Scripts\Post-Deployment\dbo.Department.sql" />
     <None Include="Scripts\Post-Deployment\dbo.Registration.sql" />
     <None Include="Scripts\Post-Deployment\dbo.Roles.sql" />
+    <Build Include="dbo\Tables\AssignedProjects.sql" />
+    <Build Include="dbo\Tables\DocumentType.sql" />
+    <None Include="Scripts\Post-Deployment\dbo.DocumentTypes.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Scripts\Post-Deployment\WebTimeSheet.PostDeployment.sql">
+    <PostDeploy Include="Scripts\Post-Deployment\POCDatabase.PostDeployment.sql">
       <CopyToOutputDirectory>DoNotCopy</CopyToOutputDirectory>
     </PostDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="POC.Database.jfm" />
+    <None Include="POC.Database.sqlproj.user" />
+    <None Include=".gitignore" />
+    <None Include="POC.Database.publish.xml" />
   </ItemGroup>
 </Project>

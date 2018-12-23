@@ -1,5 +1,5 @@
 ﻿
-CREATE PROC [dbo].[Usp_GetWeekTimeSheetDetailsByDateRange] @FromDate DATE = NULL
+CREATE PROC [Usp_GetWeekTimeSheetDetailsByDateRange] @FromDate DATE = NULL
 	,@ToDate DATE = NULL
 	,@UserID INT
 AS
@@ -7,7 +7,7 @@ BEGIN
 	DECLARE @TimeSheetMasterID INT
 
 	SELECT @TimeSheetMasterID = [TimeSheetMasterID]
-	FROM [WebTimeSheetDB].[dbo].[TimeSheetMaster]
+	FROM [dbo].[TimeSheetMaster]
 	WHERE FromDate >= @FromDate
 		AND ToDate <= @ToDate
 		AND UserID = @UserID

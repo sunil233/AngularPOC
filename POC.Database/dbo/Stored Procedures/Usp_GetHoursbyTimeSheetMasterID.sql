@@ -13,7 +13,7 @@ SELECT  TimeSheetID, comments, TimesheetStatus ,
   
   SELECT   NULL,  null,null,
       SUM(Hours) 
-  FROM [TimeSheetDetails]     
+  FROM dbo.[TimeSheetDetails]     
   where TimeSheetMasterID =@TimeSheetMasterID and ProjectID =@ProjectID 
 end
 

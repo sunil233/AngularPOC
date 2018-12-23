@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+/node_modules
+/wwwroot/build
+/wwwroot/dist
+/packages
+/bin
+/obj
+/.vs/POC.Angular/v15/Server/sqlite3/db.lock

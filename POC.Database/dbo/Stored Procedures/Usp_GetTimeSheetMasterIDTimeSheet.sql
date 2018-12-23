@@ -5,7 +5,7 @@ CREATE PROC [dbo].[Usp_GetTimeSheetMasterIDTimeSheet] @FromDate DATE = NULL
 AS
 BEGIN
 	SELECT [TimeSheetMasterID]
-	FROM [WebTimeSheetDB].[dbo].[TimeSheetMaster]
+	FROM [dbo].[TimeSheetMaster]
 	WHERE FromDate BETWEEN @FromDate
 			AND @ToDate
 		AND UserID = @UserID

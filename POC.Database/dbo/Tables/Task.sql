@@ -42,7 +42,7 @@ GO
 ALTER TABLE [dbo].[Task] ADD  CONSTRAINT [df_Task_CreatedOn]  DEFAULT (getutcdate()) FOR [CreatedOn]
 GO
 
-ALTER TABLE [dbo].[Task]  WITH CHECK ADD  CONSTRAINT [FK_Task_ProjectMaster] FOREIGN KEY([ProjectID])
+ALTER TABLE [dbo].[Task]  ADD  CONSTRAINT [FK_Task_ProjectMaster] FOREIGN KEY([ProjectID])
 REFERENCES [dbo].[ProjectMaster] ([ProjectID])
 GO
 

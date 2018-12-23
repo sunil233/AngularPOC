@@ -13,10 +13,8 @@
 
 GO
 
-SET ANSI_PADDING ON
-GO
 
-ALTER TABLE [dbo].[AssignedProjects]  WITH CHECK ADD  CONSTRAINT [FK_AssignedProjects_ProjectMaster] FOREIGN KEY([ProjectId])
+ALTER TABLE [dbo].[AssignedProjects]   ADD  CONSTRAINT [FK_AssignedProjects_ProjectMaster] FOREIGN KEY([ProjectId])
 REFERENCES [dbo].[ProjectMaster] ([ProjectID])
 GO
 

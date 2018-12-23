@@ -14,9 +14,6 @@
 
 GO
 
-SET ANSI_PADDING ON
-GO
-
 ALTER TABLE [dbo].[ProjectMaster] ADD  CONSTRAINT [df_IsActive]  DEFAULT ((1)) FOR [IsActive]
 GO
 

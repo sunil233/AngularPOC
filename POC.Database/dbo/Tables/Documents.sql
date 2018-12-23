@@ -18,9 +18,6 @@
 
 GO
 
-SET ANSI_PADDING ON
-GO
-
 ALTER TABLE [dbo].[Documents] ADD  CONSTRAINT [df_Documents_IsDeleted]  DEFAULT ((0)) FOR [IsDeleted]
 GO
 
