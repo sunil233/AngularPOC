@@ -47,9 +47,13 @@ Sample POC Application to submit timesheet with all the features in Angular
 
 # Screenshots
 ![Alt text](https://github.com/sunil233/AngularPOC/blob/master/POC.Angular/wwwroot/screenshots/1_login.JPG?raw=true) Login
+---
 ![Alt text](https://github.com/sunil233/AngularPOC/blob/master/POC.Angular/wwwroot/screenshots/2-superadmindashboard_2.JPG?raw=true) Super Admin Dashboard]
+---
 ![Alt text](https://github.com/sunil233/AngularPOC/blob/master/POC.Angular/wwwroot/screenshots/2.1_superadmindashboard.JPG?raw=true) Super Admin Dashboard
+---
 ![Alt text](https://github.com/sunil233/AngularPOC/blob/master/POC.Angular/wwwroot/screenshots/3_add_employee.JPG?raw=true) Add Employee
+---
 ![Alt text](https://github.com/sunil233/AngularPOC/blob/master/POC.Angular/wwwroot/screenshots/4_edit_employee.JPG?raw=true) Edit Employee
 
 # Disclaimer:This sample project is for learning and training purpose only.Not suitable for commerical use.
