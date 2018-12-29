@@ -46,6 +46,6 @@ Sample POC Application to submit timesheet with all the features in Angular
 8.4) Reject  TimeSheet
 
 # Screenshots
-[![Alt text](https://github.com/sunil233/AngularPOC/blob/master/POC.Angular/wwwroot/screenshots/1_login.JPG?raw=true)][Login]
+(https://github.com/sunil233/AngularPOC/blob/master/POC.Angular/wwwroot/screenshots/1_login.JPG?raw=true)
 
 # Disclaimer:This sample project is for learning and training purpose only.Not suitable for commerical use.
