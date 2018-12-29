@@ -32,17 +32,17 @@ Sample POC Application to submit timesheet with all the features in Angular
 2)POC.Repository
 
 # Application Features
-1) Login
-2) Role based login (superadmin/demoadmin/demouser)
-3) Dashboard
-4) CRUD Operations
-5) Validations and toaster messages
-6) Custom Grid with Pagination and Search
-7) Upload and download documents
-8) TimeSheet
-8.1 Save TimeSheet
-8.2 Submit TimeSheet
-8.3 Approve TimeSheet
-8.4 Reject  TimeSheet
+1)   Login
+2)   Role based login (superadmin/demoadmin/demouser)
+3)   Dashboard
+4)   CRUD Operations
+5)   Validations and toaster messages
+6)   Custom Grid with Pagination and Search
+7)   Upload and download documents
+8)   TimeSheet
+8.1) Save TimeSheet
+8.2) Submit TimeSheet
+8.3) Approve TimeSheet
+8.4) Reject  TimeSheet
 
 # Disclaimer:This sample project is for learning and training purpose only.Not suitable for commerical use.
