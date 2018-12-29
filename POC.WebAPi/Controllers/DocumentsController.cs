@@ -47,7 +47,7 @@ namespace Acys.WebApi.Controllers
                 {
                     AssignedToId = Convert.ToInt32(httpRequest.Form["AssignedToId"]);
                 }
-                if (!string.IsNullOrEmpty(httpRequest.Form["DocumentType"]))
+                if (!string.IsNullOrEmpty(httpRequest.Form["DocumentTypeId"]))
                 {
                     DocumentTypeId = Convert.ToInt32(httpRequest.Form["DocumentTypeId"]);
                 }
