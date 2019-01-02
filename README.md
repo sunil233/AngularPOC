@@ -67,4 +67,4 @@ Time Sheet
 ![Alt text](https://github.com/sunil233/AngularPOC/blob/master/POC.Angular/wwwroot/screenshots/20_timesheet.JPG?raw=true)
 
 
-# Disclaimer:This sample project is for learning and training purpose only.Not suitable for commerical use.
+# Disclaimer:This sample project is for learning and training purpose.
